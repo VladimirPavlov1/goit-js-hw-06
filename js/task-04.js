@@ -8,14 +8,16 @@ console.log(valueEl)
 
 let counterValue=0;
 
-const increment =()=>{
+const onIncrementBtnClick =()=>{
     counterValue+=1;
     valueEl.textContent=counterValue;
 }
 
-const decrement=()=>{
+const onDecrementBtnClick=()=>{
     counterValue-=1;
     valueEl.textContent=counterValue;
 }
-decrementBtn.addEventListener('click',decrement);
-incrementBtn.addEventListener('click',increment);
+
+decrementBtn.addEventListener('click', onDecrementBtnClick);
+
+incrementBtn.addEventListener('click', onIncrementBtnClick);
