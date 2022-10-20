@@ -27,5 +27,6 @@ function onInputBlur(event){
         event.currentTarget.id=validId
     }
     else{event.currentTarget.id=invalidId}
-}
+};
+
 
