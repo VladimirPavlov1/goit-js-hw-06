@@ -31,7 +31,7 @@ const refs = {
   input:elementCreateControls.children[0],
   btnCreate:elementCreateControls.children[1],
   btnDestroy:elementCreateControls.children[2],
-  divBoxes:document.getElementById('boxes'),
+  divBoxes:document.querySelector('#boxes'),
 }
 console.dir(refs.divBoxes)
 function createBoxes(amount){
@@ -44,15 +44,17 @@ function createBoxes(amount){
   }
   refs.divBoxes.append(...createDiv)
 }
-const countDivesBoxes=Number(refs.divBoxes.childNodes.length)
-console.log(countDivesBoxes)
 
 function destroyBoxes(){
-for(let i=0; i=countDivesBoxes;i+=1){
+  const countDivesBoxes=refs.divBoxes.querySelectorAll('div')
   console.log(countDivesBoxes)
-  remove()
+  countDivesBoxes.forEach(box=>{
+    
+    box.remove('div')
+    
+  })
 }
-}
-document.createElement("div")
+
+
 refs.btnCreate.addEventListener('click',createBoxes);
 refs.btnDestroy.addEventListener('click',destroyBoxes)
