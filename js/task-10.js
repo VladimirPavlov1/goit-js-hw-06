@@ -45,11 +45,11 @@ function createBoxes(amount){
   for(let i=0;i<amount;i+=1){
     console.log(i)
     createDiv.push(document.createElement("div"))
-    const counterPx = '10px';
+    const counterPx = 30;
     createDiv.map((box,index)=>{
-    
-      box.style.width ="30px";
-      box.style.height ='30px';
+    const size= String(index*10+counterPx)+'px';
+      box.style.width =size;
+      box.style.height =size;
       box.style.backgroundColor= getRandomHexColor();
    })
   }
