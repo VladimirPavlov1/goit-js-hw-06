@@ -15,8 +15,11 @@ console.log(spanEl)
 formEl.addEventListener('input',onInputForm);
 
 function onInputForm(event){
-    console.dir(event.currentTarget.value)
-    spanEl.textContent = event.currentTarget.value
+    
+    if(Number(event.currentTarget.value.length)>0){
+    spanEl.textContent = event.currentTarget.value}
+    
+    else{spanEl.textContent = "Anonymous"}
 }
 
 
