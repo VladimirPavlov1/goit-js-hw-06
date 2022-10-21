@@ -23,8 +23,10 @@
 
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
+    return `#${Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, 0)}`;
+  }
 const elementCreateControls= document.querySelector('#controls')
 console.dir(elementCreateControls)
 const refs = {
@@ -37,10 +39,19 @@ console.dir(refs.divBoxes)
 function createBoxes(amount){
    amount =Number(refs.input.value)
   console.log(amount)
-  const createDiv=[]
+  
+  const createDiv=[];
+  
   for(let i=0;i<amount;i+=1){
     console.log(i)
     createDiv.push(document.createElement("div"))
+    const counterPx = '10px';
+    createDiv.map((box,index)=>{
+    
+      box.style.width ="30px";
+      box.style.height ='30px';
+      box.style.backgroundColor= getRandomHexColor();
+   })
   }
   refs.divBoxes.append(...createDiv)
 }
