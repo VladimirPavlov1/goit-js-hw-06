@@ -21,12 +21,13 @@ const invalidId ='validation-input.invalid'
 inputEl.addEventListener('blur',onInputBlur);
 
 function onInputBlur(event){
-   
-    if(Number(inputEl.dataset.length)===event.currentTarget.value.length){
-        
-        event.currentTarget.id=validId
+    
+    if(Number(inputEl.dataset.length)!==event.currentTarget.value.length){
+        this.classList.add('validation-input.invalid')
+        this.classList.replace('validation-input.valid','validation-input.invalid')
     }
-    else{event.currentTarget.id=invalidId}
+   
+    else{this.classList.replace('validation-input.invalid','validation-input.valid')}
 };
 
 
