@@ -69,3 +69,5 @@ function destroyBoxes(){
 
 refs.btnCreate.addEventListener('click',createBoxes);
 refs.btnDestroy.addEventListener('click',destroyBoxes)
+
+
