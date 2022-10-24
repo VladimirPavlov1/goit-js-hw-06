@@ -23,11 +23,11 @@ inputEl.addEventListener('blur',onInputBlur);
 function onInputBlur(event){
     
     if(Number(inputEl.dataset.length)!==event.currentTarget.value.length){
-        this.classList.add('validation-input.invalid')
-        this.classList.replace('validation-input.valid','validation-input.invalid')
+        this.classList.add('invalid')
+        this.classList.replace('valid','invalid')
     }
    
-    else{this.classList.replace('validation-input.invalid','validation-input.valid')}
+    else{this.classList.replace('invalid','valid')}
 };
 
 
